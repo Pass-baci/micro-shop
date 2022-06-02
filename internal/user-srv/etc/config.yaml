@@ -8,3 +8,13 @@ Mysql:
   Database: "micro-shop"
   Username: "root"
   Password: "root"
+
+Logger:
+  EncodeTime: "2006-01-02 15:04:05"
+  LoggerFile:
+    LogPath: "./log/info/"
+    ErrPath: "./log/err/"
+    MaxSize: 1 # 最大大小（以 MB 为单位）
+    MaxBackups: 1 # 是否要保留的旧日志文件的最大数量
+    MaxAge: 2 # 保留旧日志文件的最大天数
+    Compress: false # 是否使用 gzip 压缩
