@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"gorm.io/gorm"
 	"time"
 )
 
@@ -14,6 +15,11 @@ type Base struct {
 	ID         string `gorm:"primaryKey,type:nvarchar,size:50,not null,default:''"`
 	CreateTime FormatTime
 	DeleteTime FormatTime
+}
+
+func (b *Base) BeforeCreate(tx *gorm.DB) (err error) {
+	b.CreateTime = FormatTime(time.Now())
+	return
 }
 
 // 实现 sql.Scanner 接口，Scan 将 value 扫描至 FormatTime

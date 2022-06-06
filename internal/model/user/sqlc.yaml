@@ -1,0 +1,8 @@
+version: 1
+packages:
+  - path: "../../user-srv/store" # 生成文件的路径
+    name: "store" # 生成文件的包名
+    engine: "mysql"
+    schema: "schema.sql"
+    queries: "./"
+    emit_interface: true

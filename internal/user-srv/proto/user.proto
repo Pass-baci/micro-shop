@@ -1,0 +1,19 @@
+syntax = "proto3";
+option go_package = "./;proto";
+
+service User {
+  rpc CreateUser(CreateUserInfo) returns (UserInfo);
+}
+
+message CreateUserInfo {
+  string Name = 1;
+  string Password = 2;
+}
+
+message UserInfo {
+  string ID = 1;
+  string Name = 2;
+  string Password = 3;
+  string CreateTime = 4;
+  string UpdateTime = 5;
+}
